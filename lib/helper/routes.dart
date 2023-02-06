@@ -3,6 +3,7 @@ import 'package:sushi_app/view/cart_page.dart';
 import 'package:sushi_app/view/detail_product_page.dart';
 import 'package:sushi_app/view/home_page.dart';
 import 'package:sushi_app/view/onboarding_page.dart';
+import 'package:sushi_app/view/payment_page.dart';
 
 Routes(){
   return[
@@ -26,6 +27,11 @@ Routes(){
     GetPage(
       name: '/cart',
       page: ()=>CartPage(),
+      transition: Transition.fadeIn
+    ),
+    GetPage(
+      name: '/payment',
+      page: ()=>PaymentPage(),
       transition: Transition.fadeIn
     ),
   ];

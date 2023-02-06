@@ -6,7 +6,7 @@ class Palete{
   static const gradasiColor = Color(0xff151E49);
   static const primaryColor = Color(0xff050505);
   static const secondaryColor = Color(0xff767676);
-  static const accentColor = Color(0xffAF985A);
+  static const accentColor = Color(0xFFD2D27A);
 
   ///Primary Color
   // static const MaterialColor primary = MaterialColor(
