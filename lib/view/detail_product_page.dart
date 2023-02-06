@@ -280,17 +280,22 @@ class _DetailProductState extends State<DetailProduct> {
                 SizedBox(height: 32,),
                 WidgetHelper.entryAnimation(
                   delayed: 700,
-                  child: Container(
-                    width: Get.width,
-                    padding: EdgeInsets.symmetric(horizontal: 8,vertical: 24),
-                    decoration: BoxDecoration(
-                      color: Palete.primaryColor,
-                      borderRadius: BorderRadius.circular(10)
+                  child: InkWell(
+                    onTap: (){
+                      Get.toNamed('/cart');
+                    },
+                    child: Container(
+                      width: Get.width,
+                      padding: EdgeInsets.symmetric(horizontal: 8,vertical: 24),
+                      decoration: BoxDecoration(
+                        color: Palete.primaryColor,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      margin: EdgeInsets.symmetric(horizontal: 16),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text('Buy Now',style: TextStyle(color: Colors.white),))
                     ),
-                    margin: EdgeInsets.symmetric(horizontal: 16),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Buy Now',style: TextStyle(color: Colors.white),))
                   ),
                 ),
 
