@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:sushi_app/helper/pallete.dart';
 import 'package:sushi_app/helper/widget_helper.dart';
+import 'package:sushi_app/model/product_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,48 +17,58 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   Widget buildProdukItem({image,title,subtitle,price}){
-    return Container(
-      width: Get.width*.4,
-      // color: Colors.blue,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 100,
-            width: 200,
-            child: ClipRect(
-              child: Image.asset(image),
-            ),
-          ),
-          SizedBox(height: 16,),
-          Text(subtitle,style: TextStyle(color: Palete.accentColor),),
-          Text(title,style: TextStyle(color: Palete.primaryColor,fontSize: 16,fontWeight: FontWeight.w600),),
-          SizedBox(height: 16,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              RichText(
+    ProductModel item = ProductModel(price: price,title: title,subtitle: subtitle,image: image);
 
-                text: TextSpan(
-                  style: TextStyle(color: Palete.primaryColor,),
-                  text: '\$ ',
-                  children: [
-                    TextSpan(text: price,
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20))
-                  ]
-                )
-              ),
-              Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Palete.primaryColor
+    return InkWell(
+      onTap: (){
+        Get.toNamed('/detail',arguments: {'data':item});
+      },
+      child: Container(
+        width: Get.width*.4,
+        // color: Colors.blue,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 100,
+              width: 200,
+              child: Hero(
+                tag: 'imageProduk_'+image,
+                child: ClipRect(
+                  child: Image.asset(image),
                 ),
-                child: Icon(Icons.add,color: Colors.white,size: 15,),
-              )
-            ],
-          )
-        ],
+              ),
+            ),
+            SizedBox(height: 16,),
+            Text(subtitle,style: TextStyle(color: Palete.accentColor),),
+            Text(title,style: TextStyle(color: Palete.primaryColor,fontSize: 16,fontWeight: FontWeight.w600),),
+            SizedBox(height: 16,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RichText(
+
+                  text: TextSpan(
+                    style: TextStyle(color: Palete.primaryColor,),
+                    text: '\$ ',
+                    children: [
+                      TextSpan(text: price,
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20))
+                    ]
+                  )
+                ),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Palete.primaryColor
+                  ),
+                  child: Icon(Icons.add,color: Colors.white,size: 15,),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -67,19 +78,19 @@ class _HomePageState extends State<HomePage> {
       'image': 'assets/sushi_1.png',
       'subtitle': 'Nori Naki',
       'title': 'Kamikaze Salmon',
-      'price': '8,30'
+      'price': '8.30'
     },
     {
       'image': 'assets/sushi_2.png',
       'subtitle': 'Nori Naki',
       'title': 'Kamikaze Salmon',
-      'price': '9,30'
+      'price': '9.30'
     },
     {
       'image': 'assets/sushi_3.png',
       'subtitle': 'Nori Naki',
       'title': 'Crunch Chicken',
-      'price': '7,00'
+      'price': '7.00'
     },
 
   ];
@@ -89,11 +100,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 32),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 32,),
+
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
@@ -275,6 +287,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+
+                SizedBox(height: 32,),
               ],
             ),
           ),
