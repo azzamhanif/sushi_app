@@ -64,7 +64,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with TickerProviderStat
             gradient: LinearGradient(
                 colors: [
                   Palete.primaryColor,
-                  Palete.finpayColor
+                  Palete.gradasiColor
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter

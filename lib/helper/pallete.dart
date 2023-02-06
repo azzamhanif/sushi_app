@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 const primaryColor = Color(0xff050505);
 
 class Palete{
-  static const finpayColor = Color(0xff151E49);
+  static const gradasiColor = Color(0xff151E49);
   static const primaryColor = Color(0xff050505);
+  static const secondaryColor = Color(0xff767676);
+  static const accentColor = Color(0xffAF985A);
 
   ///Primary Color
   // static const MaterialColor primary = MaterialColor(

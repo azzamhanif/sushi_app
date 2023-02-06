@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   entry: ^0.0.8+1
+  carousel_slider: ^4.2.1
 #  carousel_slider: ^4.2.1
 
 dev_dependencies:
