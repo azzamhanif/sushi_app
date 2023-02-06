@@ -81,7 +81,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with TickerProviderStat
                 yOffset: -50,
                 opacity: 0,
                 curve: Curves.fastOutSlowIn,
-                duration: Duration(milliseconds: 2000),
+                duration: Duration(milliseconds: 1000),
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Image.asset('assets/onboarding.png')
@@ -94,7 +94,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with TickerProviderStat
                 opacity: 0,
                 curve: Curves.fastOutSlowIn,
                 delay: Duration(milliseconds: 1000),
-                duration: Duration(milliseconds: 2000),
+                duration: Duration(milliseconds: 1000),
                 child: Text('伊那寿司',style: TextStyle(color: Colors.white,fontSize: 40),)),
               SizedBox(height: 16,),
               Entry(
@@ -102,7 +102,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with TickerProviderStat
                 opacity: 0,
                 curve: Curves.fastOutSlowIn,
                 delay: Duration(milliseconds: 1500),
-                duration: Duration(milliseconds: 2000),
+                duration: Duration(milliseconds: 1000),
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 64),
                   child: Text('The best fresh sushi delivered straight to your door',
@@ -117,7 +117,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with TickerProviderStat
                 opacity: 0,
                 curve: Curves.fastOutSlowIn,
                 delay: Duration(milliseconds: 1500),
-                duration: Duration(milliseconds: 2000),
+                duration: Duration(milliseconds: 1000),
                 child: Align(
                   alignment: Alignment.center,
                   child: InkWell(

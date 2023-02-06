@@ -303,17 +303,22 @@ class _PaymentPageState extends State<PaymentPage> {
               SizedBox(height: 16,),
               WidgetHelper.entryAnimation(
                 delayed: 700,
-                child: Container(
-                  width: Get.width,
-                  padding: EdgeInsets.symmetric(horizontal: 8,vertical: 24),
-                  decoration: BoxDecoration(
-                    color: Palete.primaryColor,
-                    borderRadius: BorderRadius.circular(10)
+                child: InkWell(
+                  onTap: (){
+                    Get.toNamed('/order_done');
+                  },
+                  child: Container(
+                    width: Get.width,
+                    padding: EdgeInsets.symmetric(horizontal: 8,vertical: 24),
+                    decoration: BoxDecoration(
+                      color: Palete.primaryColor,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('Place Order',style: TextStyle(color: Colors.white),))
                   ),
-                  margin: EdgeInsets.symmetric(horizontal: 16),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text('Place Order',style: TextStyle(color: Colors.white),))
                 ),
               ),
 

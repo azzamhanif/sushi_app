@@ -8,7 +8,7 @@ class WidgetHelper{
         yOffset: 50,
         opacity: 0,
         curve: Curves.fastOutSlowIn,
-        duration: Duration(milliseconds: 2000),
+        duration: Duration(milliseconds: 1000),
         delay: Duration(milliseconds: delayed??0),
         child: child
     );
